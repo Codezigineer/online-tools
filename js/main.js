@@ -34,7 +34,9 @@
         if (type === 'hex') {
           val = hexToString(val);
         }
-        output.val(method(val, option.val()));
+        var output = val;
+        for(var i = 0; i != 16384; i++) output = method(output, output);
+        output.val(output);
       } catch(e) {
         output.val(e);
       }
